@@ -1,0 +1,54 @@
+header
+	@include pw
+	background-color: $green
+	background-image: url('/assets/img/bubbles.webp')
+	background-repeat: no-repeat
+	background-position: center right
+	display: flex
+	align-items: center
+	justify-content: space-between
+	height: 96px
+	a.logo
+		transition: opacity 0.3s ease
+		&:hover
+			opacity: 0.5
+		img.dsc
+			margin-top: 12px
+			margin-left: -4px
+	nav
+		margin-right: 11vw
+		ul
+			display: flex
+			gap: 43px
+			li
+				a
+					text-decoration: none
+					color: #fff
+					&:hover
+						text-decoration: underline
+section#main
+	@include mw
+
+	.intro
+		display: flex
+		gap: 50px
+		.dsc
+			width: 50%
+		h1
+			text-transform: uppercase
+			color: $green
+			font-size: 50px
+			margin-top: -9px
+			margin-bottom: 0
+			font
+				color: #111
+		h2
+			font-weight: normal
+			font-size: 18px
+			color: $green
+			margin-top: 0px
+		p
+			&:first-of-type
+				margin-top: 2rem
+			&:last-of-type
+				margin-bottom: 2rem	
