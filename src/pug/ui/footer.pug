@@ -11,3 +11,18 @@ footer
 			li
 				a(href="/assets/mintbarrier.pdf" target="_blank") Презентация
 	p Mint barrier - выбор тех, кто следит за новинками на рынке товаров из сферы технологии отделки и выбирает самые эффективные, надежные, практичныи и современные решения
+
+.modal-wrapper
+	.modal.ok
+		img.close(src="/assets/img/icons/close.svg" width="24" height="24")
+
+		.message Для заявки на приобретение <span class="g">mint barrier<span>, пожалуйста, оставьте свой номер телефона <br><span class="b">и мы вам перезвоним</span>
+		form
+			label
+				input.tel(type="text" required)
+				span Ваш телефон
+			button.order(type="submit") Отправить
+
+		//- img(src="/assets/img/icons/ok.svg" width="88" height="88")
+		//- span.txt Успех! <br> Ожидайте, когда менеджер <br> с вами свяжется
+		//- button.order.grey Закрыть

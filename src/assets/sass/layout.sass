@@ -139,6 +139,7 @@ footer
 		margin-top: 20px
 section#main
 	@include mw
+	min-height: 60vh
 	p.divider
 		margin: 2rem
 		@media(max-width:760px)
@@ -152,6 +153,13 @@ section#main
 			width: 50%
 			@media(max-width:960px)
 				width: 100%
+		ul.i
+			li
+				display: flex
+				align-items: center
+				line-height: 30px
+				img
+					margin-right: 1rem
 		h1
 			text-transform: uppercase
 			color: $green

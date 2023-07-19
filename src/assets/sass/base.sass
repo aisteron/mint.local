@@ -47,6 +47,11 @@ button.order
 	transition: $tall
 	&:hover
 		background-color:  darken($green, 5%)
+	&.grey
+		background-color: #8C8C8C
+		width: 139px
+		&:hover
+			background-color:  darken(#8C8C8C, 5%)
 
 .mt1
 	margin-top: 1rem
@@ -76,3 +81,89 @@ $notebook: 100%
 		padding: 0 calc(50% - $desktop/2)
 	@media(max-width: 1899px)
 		padding: 1rem
+
+.modal-wrapper
+	display: none
+	position: fixed
+	z-index: 1
+	padding-top: 2rem
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	overflow: auto
+	background-color: rgba(0,0,0,0.4)
+	&.open
+		display: block
+	.modal
+		position: relative
+		background-color: #fff
+		box-shadow: 0px 4px 4px 0px rgba(0, 155, 143, 0.17)
+		border-radius: 5px
+		animation-name: animatetop
+		animation-duration: 0.4s
+		width: 354px
+		height: 294px
+		margin: 0 auto
+		padding-top: 49px
+		padding-bottom: 30px
+		padding-left: 64px
+		padding-right: 64px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		&.ok
+			align-items: center
+		.message
+			font-size: 15px
+			color: #8C8C8C
+			line-height: 142%
+			span.g
+				color: $green
+			span.b
+				color: #111
+		form
+			label
+				position: relative
+				margin: 20px 0
+				display: inline-block
+				input.tel, input.email
+					border: none
+					border-bottom: 1px solid $green
+					width: 229px
+					&:focus, &:valid
+						outline: none
+						~ span
+							font-size: 11px
+							top: -15px
+							cursor: default
+				span
+					position: absolute
+					top: -4px
+					left: 0
+					cursor: pointer
+					transition: $tall
+					font-size: 1rem
+					color: $green
+		span.txt
+			text-align: center
+			color: $green
+			font-size: 15px
+		img.close
+			position: absolute
+			top: 10px
+			right: 10px
+			cursor: pointer
+			&:hover
+				filter: brightness(0) saturate(100%)
+				filter: invert(31%) sepia(94%) saturate(7404%) hue-rotate(357deg) brightness(101%) contrast(126%)
+
+
+@keyframes animatetop
+	from
+		top: -300px
+		opacity: 0
+
+	to
+		top: 0
+		opacity: 1

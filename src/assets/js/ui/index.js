@@ -1,7 +1,9 @@
 import { qs,qsa,sw } from "../libs";
+import { popup } from "./popup";
 export function Ui(){
 	swiper()
 	open_mobile_menu()
+	popup()
 }
 
 async function swiper(){
