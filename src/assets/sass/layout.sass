@@ -8,6 +8,85 @@ header
 	align-items: center
 	justify-content: space-between
 	height: 96px
+	position: relative
+	@media(max-width:1880px)
+		justify-content: start
+	@media(max-width:1300px)	
+		background-image: none
+		justify-content: space-between
+	@media(max-width:693px)
+		height: 50px
+		a.mail
+			display: block !important
+			color: #fff
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+		a.logo
+			.m
+				width: 134px
+			.dsc
+				display: none
+		nav
+			display: none
+			&.open
+				display: block
+				position: absolute
+				background-color: #fff
+				top: 50px
+				width: 100%
+				height: 100vh
+				left: 0
+				margin: 0
+				padding: 1rem
+				ul
+					flex-direction: column
+					li
+						a
+							color: $green	
+		#nav-icon1
+			width: 20px
+			height: 16px
+			position: relative
+			transform: rotate(0deg)
+			transition: .5s ease-in-out
+			cursor: pointer
+
+			span
+				pointer-events: none
+				display: block
+				position: absolute
+				height: 2px
+				width: 100%
+				background: #fff
+				border-radius: 2px
+				opacity: 1
+				left: 0
+				transform: rotate(0deg)
+				transition: .25s ease-in-out
+
+				&:nth-child(1)
+					top: 0px
+
+				&:nth-child(2)
+					top: 6px
+
+				&:nth-child(3)
+					top: 12px
+
+			&.open span
+				&:nth-child(1)
+					top: 6px
+					transform: rotate(135deg)
+
+				&:nth-child(2)
+					opacity: 0
+					left: -60px
+
+				&:nth-child(3)
+					top: 6px
+					transform: rotate(-135deg)
+			
 	a.logo
 		transition: opacity 0.3s ease
 		&:hover
@@ -17,6 +96,14 @@ header
 			margin-left: -4px
 	nav
 		margin-right: 11vw
+		@media(max-width:1880px)
+			margin-right: 0
+			margin-left: 11vw
+		@media(max-width:760px)	
+			margin-right: 36px
+			margin-left: 0
+			ul
+				gap: 2rem		
 		ul
 			display: flex
 			gap: 43px
@@ -26,20 +113,53 @@ header
 					color: #fff
 					&:hover
 						text-decoration: underline
+footer
+	@include pw
+	background-color: $green
+	a
+		color: #fff
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	nav
+		padding-top: 38px
+		@media(max-width:450px)
+			padding-top: 10px
+			ul
+				flex-direction: column
+				gap: 1rem
+		ul
+			display: flex
+			gap: 40px
+	p
+		color: rgba(255, 255, 255, 0.80)
+		font-size: 14px
+		padding-bottom: 1rem
+		margin-bottom: 0
+		margin-top: 20px
 section#main
 	@include mw
-
-	.intro
+	p.divider
+		margin: 2rem
+		@media(max-width:760px)
+			margin: 1rem
+		@media(max-width:450px)	
+			margin-left: 0
+	.box.intro
 		display: flex
 		gap: 50px
 		.dsc
 			width: 50%
+			@media(max-width:960px)
+				width: 100%
 		h1
 			text-transform: uppercase
 			color: $green
 			font-size: 50px
 			margin-top: -9px
 			margin-bottom: 0
+			@media(max-width:400px)
+				margin-left: -3px
 			font
 				color: #111
 		h2
@@ -51,4 +171,121 @@ section#main
 			&:first-of-type
 				margin-top: 2rem
 			&:last-of-type
-				margin-bottom: 2rem	
+				margin-bottom: 2rem
+		@media(max-width:693px)
+			flex-direction: column-reverse
+			margin-top: 0
+			padding-top: 2rem
+			gap: 0
+			img.intro
+				display: none
+			.tiles
+				display: flex !important
+				gap: 1rem
+				margin-top: 2rem
+		@media(max-width:411px)	
+			.tiles
+				img
+					width: 90px
+					height: 90px
+	.box.default
+		display: flex
+		@media(max-width:650px)
+			flex-direction: column
+
+		.dsc
+			margin-right: 118px
+			@media(max-width:1080px)
+				margin-right: 3rem
+			@media(max-width:770px)	
+				margin-right: 1rem
+			h3
+				text-transform: uppercase
+				font-family: Comfortaa
+				font-weight: bold
+				font-size: 29px
+				color: $green
+				margin-bottom: 0
+				margin-top: 0
+				line-height: 40px
+			h4
+				font-weight: normal
+				color: $green
+			p
+				line-height: 25px
+		img.d
+			border-radius: 14px
+			@media(max-width:770px)
+				border-radius: 0
+				width: 50%
+				height: 220px
+			@media(max-width:650px)
+				width: fit-content !important
+				//margin: 0 -1rem
+		.swiper
+			min-width: 435px
+			@media(max-width:770px)
+				min-width: 50%
+			@media(max-width:650px)	
+				width: 100vw
+				margin-left: -1rem
+				padding-bottom: 2rem
+				.swiper-pagination
+					bottom: 0
+				.swiper-slide
+					img
+						width: 100%	!important
+						height: auto
+						//object-fit: contain
+			.swiper-slide img
+				border-radius: 14px
+				@media(max-width:770px)
+					border-radius: 0
+					width: 360px
+					height: auto
+			.swiper-pagination-bullet-active
+				background-color: $green
+			.swiper-pagination
+				@media(max-width:768px)
+					bottom: 90px
+	.box.rw
+		.row
+			display: flex
+			align-items: center
+			justify-content: space-between
+			@media(max-width:690px)
+				flex-direction: column
+				align-items: flex-start
+			img.d
+				@media(max-width:768px)
+					width: 50%
+					height: auto
+
+		h3
+			font-family: Comfortaa
+			font-weight: bold
+			font-size: 29px
+			color: $green
+		h4
+			font-weight: normal	
+			color: $green
+			font-size: 22px
+			margin-bottom: 10px
+		.dsc
+			@media(max-width:768px)
+				margin-right: 1rem
+			p
+				line-height: 25px
+			ul
+				li
+					line-height: 25px
+					span
+						&:nth-of-type(1)
+							font-weight: 500
+							display: inline-block
+							margin-right: 10px
+	.box.sequence
+		@media(max-width:768px)							
+			.dsc h3
+				text-transform: inherit
+				font-size: 26px

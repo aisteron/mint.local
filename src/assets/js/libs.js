@@ -57,3 +57,26 @@ export async function xml(action, data, path){
 		xhr.send(body);
 	})
 }
+
+export const sw = {
+  async load(){
+    return new Promise(resolve => {
+      if(qs('[swiper]')){resolve(true); return}
+
+      let script = document.createElement("script")
+      script.src = "/vendors/swiper/swiper-bundle.min.js"
+      script.setAttribute("swiper","")
+      qs(".scripts-area").appendChild(script)
+
+      script.onload = () => {
+        let style = loadCSS("/vendors/swiper/swiper-bundle.min.css")
+        onloadCSS(style, () => {
+          resolve(true)
+        })
+      }
+    })
+  },
+  init(el, config){
+    return new Swiper(el, config)
+  }
+}
