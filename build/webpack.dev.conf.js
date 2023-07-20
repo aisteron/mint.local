@@ -20,7 +20,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       app.use(bodyParser.urlencoded({extended : true}));
       app.use(bodyParser.json());
 
-      app.post('/api', (req, res) => {
+      app.post('/api/', (req, res) => {
           
           if(req.body.action == 'callback'){
             const data = fs.readFileSync('./src/static/api/cb.json', 'utf8')

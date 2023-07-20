@@ -75,7 +75,7 @@ function send(){
 			data: input.value
 		}
 
-		xml("callback", obj, "api")
+		xml("callback", obj, "api/")
 		.then(r => JSON.parse(r))
 		.then(async (r) => {await load_toast(); return r})
 		.then(r => {

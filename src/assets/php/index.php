@@ -6,7 +6,8 @@ $data = explode("data=", $data);
 $data = json_decode($data[1],true);
 
 
-$to = 'mintbarrier@gmail.com';
+//$to = 'mintbarrier@gmail.com';
+$to = 'timotheus@list.ru';
 
 $data['type'] == 'tel'
 ? $subject = 'Перезвонить'
@@ -36,7 +37,7 @@ $data['type'] == 'tel'
 
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-Type: text/html; charset=UTF-8';
-$headers[] = 'From: girl.recall.widget <robot@sauko.by>';
+$headers[] = 'From: mint.mailer <robot@mint.by>';
 
 		
 
